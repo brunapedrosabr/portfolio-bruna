@@ -1,0 +1,280 @@
+.contato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 64px;
+}
+
+.contato__titulo {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.contato__texto {
+  margin: 0 0 28px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Canais ---------- */
+.canais {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.canais a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--raio);
+  background: var(--paper);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.canais a:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.canais__icone {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--mint);
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.canais__texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.canais__texto small {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.canais__seta {
+  color: var(--primary);
+}
+
+.contato__local {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 0;
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+}
+
+/* ---------- Formulário ---------- */
+.contato-form {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: var(--sombra);
+}
+
+.contato-form__topo {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.contato-form__topo h2 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.campo textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--primary);
+  outline: 3px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  outline-offset: 0;
+  background: var(--paper);
+}
+
+.campo input[aria-invalid='true'],
+.campo textarea[aria-invalid='true'] {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.campo__erro {
+  margin: 6px 0 0;
+  color: var(--danger);
+  font-size: 0.82rem;
+}
+
+.contato-form__enviar {
+  width: 100%;
+}
+
+.contato-form__status {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.contato-form__status > svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+.contato-form__status p {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+}
+
+.contato-form__status a {
+  text-decoration: underline;
+}
+
+.contato-form__status .btn {
+  margin-top: 14px;
+}
+
+.contato-form__status--sucesso {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.contato-form__status--erro {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* ---------- Bico de Bunsen ---------- */
+.bunsen {
+  width: 34px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.bunsen__chama {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scale(0.7);
+  transition: transform 0.4s ease;
+  animation: chama 1.2s ease-in-out infinite;
+}
+
+.bunsen__externa {
+  fill: #6fa8f2;
+  transition: fill 0.4s ease;
+}
+
+.bunsen__interna {
+  fill: #cfe3fb;
+  transition: fill 0.4s ease;
+}
+
+/* Enviando: a chama aumenta */
+.contato-form--enviando .bunsen__chama {
+  animation-duration: 0.4s;
+}
+
+/* Sucesso: chama verde (como no teste de chama do cobre/boro) */
+.contato-form--sucesso .bunsen__externa {
+  fill: #3fbf7f;
+}
+.contato-form--sucesso .bunsen__interna {
+  fill: #c9f2dc;
+}
+
+/* Erro: chama alaranjada */
+.contato-form--erro .bunsen__externa,
+.contato-form--naoConfigurado .bunsen__externa {
+  fill: #f2a65a;
+}
+
+@keyframes chama {
+  0%,
+  100% {
+    transform: scale(0.75, 0.75);
+  }
+  50% {
+    transform: scale(0.7, 0.85);
+  }
+}
+
+.contato-form--enviando .bunsen__chama {
+  animation-name: chama-forte;
+}
+
+@keyframes chama-forte {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.92, 1.08);
+  }
+}
+
+@media (max-width: 900px) {
+  .contato {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contato-form {
+    padding: 20px;
+  }
+}

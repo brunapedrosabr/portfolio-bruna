@@ -1,0 +1,214 @@
+/* ---------- Cena do laboratório (SVG) ---------- */
+.lab-scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #eaf4ef;
+}
+
+.lab-poster__br {
+  fill: #fff;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.lab-obj {
+  cursor: pointer;
+  outline: none;
+}
+
+.lab-obj__area {
+  fill: transparent;
+}
+
+.lab-obj__arte {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition: transform 0.3s ease;
+}
+
+.lab-obj:hover .lab-obj__arte,
+.lab-obj:focus-visible .lab-obj__arte {
+  transform: translateY(-6px);
+}
+
+/* O jaleco balança em vez de subir */
+.lab-obj--sobre .lab-obj__arte {
+  transform-origin: center top;
+}
+.lab-obj--sobre:hover .lab-obj__arte,
+.lab-obj--sobre:focus-visible .lab-obj__arte {
+  transform: rotate(-3deg);
+}
+
+/* Etiquetas com o nome da seção */
+.lab-etiqueta__fundo {
+  fill: #fff;
+  stroke: var(--primary);
+  stroke-width: 1;
+  transition: fill 0.2s ease;
+}
+
+.lab-etiqueta__simbolo {
+  fill: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lab-etiqueta__nome {
+  fill: var(--ink);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.lab-obj:hover .lab-etiqueta__fundo,
+.lab-obj:focus-visible .lab-etiqueta__fundo {
+  fill: var(--primary);
+}
+
+.lab-obj--favoritos:hover .lab-etiqueta__fundo,
+.lab-obj--favoritos:focus-visible .lab-etiqueta__fundo {
+  fill: var(--violet);
+  stroke: var(--violet);
+}
+
+.lab-obj:hover .lab-etiqueta text,
+.lab-obj:focus-visible .lab-etiqueta text {
+  fill: #fff;
+}
+
+.lab-obj:focus-visible .lab-etiqueta__fundo {
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+/* ---------- Animações ---------- */
+.lab-bolha {
+  transform-box: fill-box;
+  animation: subir 2.4s ease-in infinite;
+}
+.lab-bolha--2 {
+  animation-delay: 0.8s;
+}
+.lab-bolha--3 {
+  animation-delay: 1.5s;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+}
+
+.lab-chama {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: tremular 1.1s ease-in-out infinite;
+}
+
+.lab-obj--contato:hover .lab-chama {
+  animation-duration: 0.45s;
+}
+
+@keyframes tremular {
+  50% {
+    transform: scaleY(1.12) scaleX(0.94);
+  }
+}
+
+.lab-gota {
+  animation: pingar 2.2s ease-in infinite;
+}
+
+@keyframes pingar {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+
+.lab-vapor {
+  animation: vapor 3s ease-in-out infinite;
+}
+
+@keyframes vapor {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* ---------- Lista (telas pequenas) ---------- */
+.lab-list {
+  display: none;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-list__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--raio);
+  background: var(--paper);
+  transition: border-color 0.2s ease;
+}
+
+.lab-list__item:hover {
+  border-color: var(--primary);
+}
+
+.lab-list__texto {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lab-list__texto strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.lab-list__texto span {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.lab-list__seta {
+  color: var(--primary);
+}
+
+@media (max-width: 760px) {
+  /* No celular a cena vira ilustração e a navegação fica na lista. */
+  .lab-etiqueta {
+    display: none;
+  }
+
+  .lab-list {
+    display: grid;
+  }
+}

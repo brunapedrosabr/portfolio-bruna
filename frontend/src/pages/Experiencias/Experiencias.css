@@ -1,0 +1,246 @@
+/* ---------- Coluna de destilação ---------- */
+.coluna {
+  position: relative;
+  max-width: 920px;
+  margin-inline: auto;
+  padding: 18px 28px 0;
+  border: 2px solid var(--blue);
+  border-bottom: 0;
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, var(--blue-soft), var(--paper) 70%);
+}
+
+.coluna__rotulo {
+  margin: 0;
+  color: #3f7f94;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.coluna__rotulo--base {
+  padding: 14px 0 18px;
+}
+
+.coluna__pratos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada "prato" da coluna é uma etapa da carreira */
+.prato {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 8px;
+  border-bottom: 2px dashed var(--blue);
+}
+
+.prato:first-child {
+  margin-top: 8px;
+  border-top: 2px dashed var(--blue);
+}
+
+.prato__periodo {
+  padding-top: 6px;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.prato h3 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+}
+
+.prato h4 {
+  margin: 16px 0 8px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prato__empresa {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.prato__descricao {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.prato__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 6px 24px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.prato__destaques {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prato__destaques li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--amber-ink);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Balão de fundo da coluna (só decoração) */
+.coluna__balao {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  width: 120px;
+  height: 60px;
+  border: 2px solid var(--blue);
+  border-top: 0;
+  border-radius: 0 0 60px 60px;
+  background: var(--amber-soft);
+  transform: translateX(-50%);
+}
+
+.coluna {
+  margin-bottom: 60px;
+}
+
+/* ---------- Voluntariado ---------- */
+.voluntariado {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.voluntariado__cartao {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.voluntariado__cartao > svg {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+
+.voluntariado__cartao h3 {
+  margin: 12px 0 2px;
+  font-size: 1.3rem;
+}
+
+.voluntariado__org {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 0.88rem;
+}
+
+.voluntariado__cartao p:last-child {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.voluntariado__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.voluntariado__cartao p.voluntariado__destaque {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--amber-ink);
+  font-weight: 500;
+}
+
+/* ---------- Prêmios ---------- */
+.premios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.premio {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.premio__icone {
+  width: 28px;
+  height: 28px;
+  color: #b07c12;
+}
+
+.premio h3 {
+  margin: 12px 0 4px;
+  font-size: 1.2rem;
+}
+
+.premio__meta {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.premio p:last-child {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 820px) {
+  .voluntariado {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .premios {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .coluna {
+    padding: 14px 16px 0;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .prato {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 22px 4px;
+  }
+}

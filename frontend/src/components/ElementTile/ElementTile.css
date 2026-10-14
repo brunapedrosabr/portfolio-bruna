@@ -1,0 +1,92 @@
+.tile {
+  display: inline-grid;
+  grid-template-rows: auto 1fr auto;
+  flex-shrink: 0;
+  border: 1px solid var(--tile-borda, var(--line-strong));
+  border-radius: 6px;
+  background: var(--tile-fundo, var(--mint));
+  color: var(--tile-texto, var(--ink));
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tile__numero {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--tile-numero, var(--primary));
+}
+
+.tile__simbolo {
+  align-self: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tile__nome {
+  overflow: hidden;
+  font-weight: 500;
+  line-height: 1.15;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Tamanhos */
+.tile--p {
+  width: 44px;
+  height: 46px;
+  padding: 3px 5px;
+}
+.tile--p .tile__numero {
+  font-size: 9px;
+}
+.tile--p .tile__simbolo {
+  font-size: 18px;
+}
+
+.tile--m {
+  width: 80px;
+  height: 66px;
+  padding: 5px 6px 6px;
+}
+.tile--m .tile__numero {
+  font-size: 10px;
+}
+.tile--m .tile__simbolo {
+  font-size: 22px;
+}
+.tile--m .tile__nome {
+  font-size: 9.5px;
+}
+
+.tile--g {
+  width: 112px;
+  height: 120px;
+  padding: 10px 12px 12px;
+  border-width: 1.5px;
+  border-radius: 10px;
+}
+.tile--g .tile__numero {
+  font-size: 13px;
+}
+.tile--g .tile__simbolo {
+  font-size: 44px;
+}
+.tile--g .tile__nome {
+  font-size: 12px;
+}
+
+/* Famílias (como as cores da tabela periódica) */
+.tile--extra {
+  --tile-fundo: var(--violet-soft);
+  --tile-borda: var(--violet-line);
+  --tile-numero: var(--violet);
+}
+
+.tile--marca {
+  --tile-fundo: var(--paper);
+  --tile-borda: var(--primary);
+}
