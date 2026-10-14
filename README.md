@@ -63,11 +63,13 @@
 
 ## 🔗 Links Úteis
 
-- 🌐 **Demo Online:** [Acesse o portfólio](https://SEU-PORTFOLIO.vercel.app) <!-- TODO: trocar pelo link da Vercel -->
+- 🌐 **Demo Online:** [Acesse o portfólio](https://portfolio-bruna-liard.vercel.app)
+
   > 💻 Front-end publicado na **Vercel**.
-- ⚙️ **API:** [Health check da API](https://SUA-API.onrender.com/api/health) <!-- TODO: trocar pelo link do Render -->
-  > ☕ Back-end Spring Boot publicado no **Render** (plano gratuito: o primeiro acesso após um tempo parado pode levar alguns segundos).
-- 🎨 **Protótipos:** [Wireframes no Figma](https://www.figma.com/) <!-- TODO: trocar pelo link do seu arquivo no Figma -->
+  - ⚙️ **API:** [Health check da API](https://portfolio-bruna-api.onrender.com/api/health)
+    > ☕ Back-end Spring Boot publicado no **Render** (plano gratuito: o primeiro acesso após um tempo parado pode levar alguns segundos).
+
+* 🎨 **Protótipos:** [Wireframes no Figma](https://www.figma.com/) <!-- TODO: trocar pelo link do seu arquivo no Figma -->
 
 ---
 
