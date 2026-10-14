@@ -69,7 +69,7 @@
   - ⚙️ **API:** [Health check da API](https://portfolio-bruna-api.onrender.com/api/health)
     > ☕ Back-end Spring Boot publicado no **Render** (plano gratuito: o primeiro acesso após um tempo parado pode levar alguns segundos).
 
-* 🎨 **Protótipos:** [Wireframes no Figma](https://www.figma.com/) <!-- TODO: trocar pelo link do seu arquivo no Figma -->
+* 🎨 **Protótipos:** [Wireframes no Figma](https://banana-basic-69499231.figma.site/)
 
 ---
 
@@ -348,6 +348,7 @@ java -jar target/portfolio-api-1.0.0.jar
 ├── .gitignore                     # 🧹 Ignora node_modules, dist, target, .env…
 ├── docs/
 │   └── screenshots/               # 🖼️ Imagens usadas neste README
+│   └── prototipos/                # 🎨 Wireframes do Figma
 │
 ├── frontend/                      # 📁 Aplicação React + Vite + TypeScript
 │   ├── .env.example               # 🧩 Modelo das variáveis do front-end
@@ -405,11 +406,21 @@ java -jar target/portfolio-api-1.0.0.jar
 
 ### 🎨 Protótipos (Figma)
 
-<!-- TODO (Sprint 01): exporte os wireframes do Figma para docs/prototipos/ e troque os links abaixo. -->
+Wireframes de média fidelidade feitos no Figma na Sprint 01. [Ver o arquivo no Figma](COLE_O_LINK_DO_FIGMA_AQUI)
 
-|        Página Inicial         |             Projetos              |
-| :---------------------------: | :-------------------------------: |
-| _Wireframe da página inicial_ | _Wireframe da página de projetos_ |
+|                                       Página Inicial (topo)                                        |                                     Página Inicial (laboratório)                                     |
+| :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
+| <img src="docs/prototipos/home_1.png" alt="Wireframe da página inicial: apresentação" width="420"> |          <img src="docs/prototipos/home_2.png" alt="Wireframe do laboratório" width="420">           |
+|                                    **Página Inicial (reação)**                                     |                                            **Sobre mim**                                             |
+|   <img src="docs/prototipos/home_3.png" alt="Wireframe da reação na página inicial" width="420">   |       <img src="docs/prototipos/sobre_1.png" alt="Wireframe da página Sobre mim" width="420">        |
+|                               **Sobre mim (formação e habilidades)**                               |                                             **Projetos**                                             |
+|   <img src="docs/prototipos/sobre_2.png" alt="Wireframe da formação e habilidades" width="420">    | <img src="docs/prototipos/projetos_1.png" alt="Wireframe da linha do tempo de projetos" width="420"> |
+|                                       **Projetos (cartões)**                                       |                                           **Experiências**                                           |
+|   <img src="docs/prototipos/projetos_2.png" alt="Wireframe dos cartões de projeto" width="420">    | <img src="docs/prototipos/experiencias_1.png" alt="Wireframe da coluna de experiências" width="420"> |
+|                                     **Experiências (prêmios)**                                     |                                             **Contato**                                              |
+| <img src="docs/prototipos/experiencias_2.png" alt="Wireframe de liderança e prêmios" width="420">  |      <img src="docs/prototipos/contato_1.png" alt="Wireframe da página de contato" width="420">      |
+|                                           **Favoritos**                                            |                                                                                                      |
+|   <img src="docs/prototipos/favoritos.png" alt="Wireframe da estante de favoritos" width="420">    |                                                                                                      |
 
 ### 🌐 Aplicação Web
 
